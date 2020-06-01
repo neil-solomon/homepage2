@@ -1,0 +1,21 @@
+.pageViewContainer {
+  height: 100vh;
+  overflow: auto;
+  -ms-overflow-style: none;
+  animation: pageViewFadeIn 1s forwards;
+}
+.pageViewContainer::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes pageViewFadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

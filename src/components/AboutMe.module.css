@@ -1,0 +1,22 @@
+.message {
+  width: min(600px, 95vw);
+  text-align: center;
+  margin-left: calc((100vw - min(600px, 95vw)) / 2);
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+.headshot {
+  width: min(300px, 90vw);
+  margin-left: calc((100vw - min(300px, 90vw)) / 2);
+  margin-top: 100px;
+  border-radius: 100%;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.5);
+  transition: opacity 2s;
+}
+.headshotHide {
+  opacity: 0;
+}
+.headshotShow {
+  opacity: 1;
+}

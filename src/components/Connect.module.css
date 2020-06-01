@@ -1,0 +1,45 @@
+.message {
+  width: min(600px, 90vw);
+  text-align: center;
+  margin-left: calc((100vw - min(600px, 90vw)) / 2);
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+.icons {
+  position: relative;
+  width: min(600px, 90vw);
+  text-align: center;
+  margin-left: calc((100vw - min(600px, 90vw)) / 2);
+}
+
+.icon {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 60px;
+  transition: color 0.5s;
+}
+
+.iconEntrance {
+  animation: iconEntrance 2s forwards;
+}
+@keyframes iconEntrance {
+  from {
+    opacity: 0;
+    margin-top: 100px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+.iconHoverOut {
+  color: rgb(69, 90, 100);
+}
+
+.iconHoverIn {
+  color: rgb(0, 150, 136);
+}
