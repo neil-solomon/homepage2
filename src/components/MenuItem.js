@@ -2,10 +2,6 @@ import React from "react";
 import styles from "./MenuItem.module.css";
 
 export default class MenuItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount = () => {
     this.menuItem = document.getElementById("menuItem" + this.props.name);
     this.menuItem.classList.add(styles.menuItem);

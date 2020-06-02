@@ -6,6 +6,7 @@
   margin-left: 25px;
   font-size: 30px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: color 0.25s, margin-top 0.5s, opacity 0.5s;
 }
 .menuItem:hover {
@@ -51,7 +52,7 @@
   }
   50% {
     opacity: 1;
-    width: 300px;
+    width: 250px;
   }
   75% {
     opacity: 1;

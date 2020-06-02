@@ -1,0 +1,35 @@
+.project {
+  width: min(600px, 90vw);
+  text-align: center;
+  margin-left: calc((100vw - min(600px, 90vw)) / 2);
+  margin-top: 50px;
+  margin-bottom: 100px;
+  transition: opacity 2s, padding-top 2s;
+}
+
+.project_invisible {
+  opacity: 0;
+  padding-top: 100px;
+}
+
+.project_visible {
+  opacity: 1;
+  padding-top: 0px;
+}
+
+.image {
+  cursor: pointer;
+  border-radius: 20px;
+  width: min(600px, 90vw);
+  box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.25);
+  transition: box-shadow 0.5s;
+}
+.image:hover {
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.25);
+}
+
+.name {
+  cursor: pointer;
+  color: rgb(0, 150, 136);
+  font-weight: bold;
+}

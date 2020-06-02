@@ -3,11 +3,6 @@ import styles from "./Menu.module.css";
 import MenuItem from "./MenuItem";
 
 export default class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   componentDidMount = () => {
     this.overlay = document.getElementById("Menu_overlay");
     this.overlay.classList.add(styles.overlay);

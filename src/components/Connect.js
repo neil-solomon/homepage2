@@ -7,11 +7,6 @@ import {
 } from "@ant-design/icons";
 
 export default class Connect extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   componentDidMount = () => {
     this.emailIcon = document.getElementById("emailIcon");
     this.emailIcon.classList.add(styles.icon);
@@ -35,6 +30,12 @@ export default class Connect extends React.Component {
     }, 1500);
   };
 
+  componentWillUnmount = () => {
+    clearTimeout(this.emailEntranceTimeout);
+    clearTimeout(this.linkedinEntranceTimeout);
+    clearTimeout(this.githubEntranceTimeout);
+  };
+
   hoverIn = (index) => {
     console.log(index);
     switch (index) {
@@ -49,6 +50,8 @@ export default class Connect extends React.Component {
       case 2:
         this.githubIcon.classList.remove(styles.iconHoverOut);
         this.githubIcon.classList.add(styles.iconHoverIn);
+        break;
+      default:
         break;
     }
   };
@@ -68,6 +71,8 @@ export default class Connect extends React.Component {
         this.githubIcon.classList.remove(styles.iconHoverIn);
         this.githubIcon.classList.add(styles.iconHoverOut);
         break;
+      default:
+        break;
     }
   };
 
@@ -79,7 +84,10 @@ export default class Connect extends React.Component {
           out the source code for all of my projects on Github.
         </div>
         <div className={styles.icons}>
-          <div id="emailIcon" style={{ left: 125 }}>
+          <div
+            id="emailIcon"
+            style={{ left: 1 * (Math.min(600, 0.9 * window.innerWidth) / 7) }}
+          >
             <a href="mailto:neilsolomon89@gmail.com">
               <MailOutlined
                 onMouseEnter={() => this.hoverIn(0)}
@@ -87,7 +95,10 @@ export default class Connect extends React.Component {
               />
             </a>
           </div>
-          <div id="linkedinIcon" style={{ left: 275 }}>
+          <div
+            id="linkedinIcon"
+            style={{ left: 3 * (Math.min(600, 0.9 * window.innerWidth) / 7) }}
+          >
             <a href="https://www.linkedin.com/in/neil-solomon/" target="blank">
               <LinkedinOutlined
                 onMouseEnter={() => this.hoverIn(1)}
@@ -95,7 +106,10 @@ export default class Connect extends React.Component {
               />
             </a>
           </div>
-          <div id="githubIcon" style={{ left: 425 }}>
+          <div
+            id="githubIcon"
+            style={{ left: 5 * (Math.min(600, 0.9 * window.innerWidth) / 7) }}
+          >
             <a href="https://github.com/neil-solomon" target="blank">
               <GithubOutlined
                 onMouseEnter={() => this.hoverIn(2)}

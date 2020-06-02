@@ -9,18 +9,15 @@ import Connect from "./Connect";
 import BackgroundAnimations from "./BackgroundAnimations";
 
 export default class MainContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuVisible: false,
-      pageViews: [
-        { name: "About Me", inView: true },
-        { name: "Projects", inView: false },
-        { name: "Resume", inView: false },
-        { name: "Connect", inView: false },
-      ],
-    };
-  }
+  state = {
+    menuVisible: false,
+    pageViews: [
+      { name: "About Me", inView: true },
+      { name: "Projects", inView: false },
+      { name: "Resume", inView: false },
+      { name: "Connect", inView: false },
+    ],
+  };
 
   toggleMenu = () => {
     this.setState({ menuVisible: !this.state.menuVisible });
@@ -63,6 +60,7 @@ export default class MainContainer extends React.Component {
         <div
           className={styles.pageViewContainer}
           key={JSON.stringify(this.state.pageViews)}
+          id="pageViewContainer"
         >
           {this.state.pageViews[0].inView && <AboutMe />}
           {this.state.pageViews[1].inView && <Projects />}
