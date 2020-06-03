@@ -48,7 +48,7 @@
   position: absolute;
   top: calc(100vh - 40px);
   left: 25px;
-  color: rgb(69, 90, 100, 0.5);
+  color: rgb(69, 90, 100, 0.75);
   font-size: 18px;
   animation: footerFadeIn 1.5s forwards;
 }

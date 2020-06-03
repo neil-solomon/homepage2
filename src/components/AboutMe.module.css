@@ -1,7 +1,7 @@
 .message {
-  width: min(600px, 90vw);
+  width: min(800px, 90vw);
   text-align: center;
-  margin-left: calc((100vw - min(600px, 90vw)) / 2);
+  margin-left: calc((100vw - min(800px, 90vw)) / 2);
   margin-top: 20px;
   margin-bottom: 200px;
 }
@@ -21,4 +21,23 @@
 .headshotShow {
   opacity: 1;
   margin-top: 50px;
+}
+
+.link {
+  color: rgb(0, 150, 136);
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

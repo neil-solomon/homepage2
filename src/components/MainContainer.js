@@ -62,7 +62,9 @@ export default class MainContainer extends React.Component {
           key={JSON.stringify(this.state.pageViews)}
           id="pageViewContainer"
         >
-          {this.state.pageViews[0].inView && <AboutMe />}
+          {this.state.pageViews[0].inView && (
+            <AboutMe changePageView={this.changePageView} />
+          )}
           {this.state.pageViews[1].inView && <Projects />}
           {this.state.pageViews[2].inView && <Resume />}
           {this.state.pageViews[3].inView && <Connect />}
