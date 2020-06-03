@@ -15,7 +15,8 @@ export default class MenuItem extends React.Component {
 
   componentWillUnmount = () => {
     clearTimeout(this.enterTimeout);
-    clearTimeout(this.exitTimeout);
+    clearTimeout(this.exitTimeout1);
+    clearTimeout(this.exitTimeout2);
   };
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -34,12 +35,14 @@ export default class MenuItem extends React.Component {
 
   menuItemClick = () => {
     this.underline.classList.add(styles.underline_animate);
-    this.exitTimeout = setTimeout(() => {
+    this.exitTimeout1 = setTimeout(() => {
       this.props.changePageView(this.props.index);
+    }, 500);
+    this.exitTimeout2 = setTimeout(() => {
       this.underline.classList.remove(styles.underline_animate);
       this.underline.classList.remove(styles.underline_show);
       this.underline.classList.add(styles.underline_hide);
-    }, 500);
+    }, 1000);
   };
 
   menuItemHoverIn = () => {
