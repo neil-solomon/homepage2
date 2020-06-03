@@ -52,6 +52,7 @@ export default class Projects extends React.Component {
 
   componentDidMount = () => {
     this.projectElements = [];
+    this.projectImageElements = [];
     for (const project of this.projects) {
       this.projectElements.push(
         document.getElementById("project_" + project.name)
@@ -62,6 +63,15 @@ export default class Projects extends React.Component {
       this.projectElements[this.projectElements.length - 1].classList.add(
         styles.project_invisible
       );
+      this.projectImageElements.push(
+        document.getElementById("image_" + project.name)
+      );
+      this.projectImageElements[
+        this.projectImageElements.length - 1
+      ].classList.add(styles.image);
+      this.projectImageElements[
+        this.projectImageElements.length - 1
+      ].classList.add(styles.image_invisible);
     }
 
     document
@@ -85,7 +95,7 @@ export default class Projects extends React.Component {
     for (const project of this.projectElements) {
       if (
         project.classList["1"] === styles.project_invisible &&
-        project.getBoundingClientRect().top < .8 * window.innerHeight
+        project.getBoundingClientRect().top < 0.8 * window.innerHeight
       ) {
         this.projectTimeouts.push(
           setTimeout(() => {
@@ -98,17 +108,25 @@ export default class Projects extends React.Component {
     }
   };
 
+  makeImageVisible = (index) => {
+    this.projectImageElements[index].classList.remove(styles.image_invisible);
+    this.projectImageElements[index].classList.add(styles.image_visible);
+  };
+
   render() {
     return (
       <>
-        {this.projects.map((project) => (
+        {this.projects.map((project, index) => (
           <div key={"project_" + project.name} id={"project_" + project.name}>
             <a href={project.url} target="blank">
-              <img
-                src={project.image}
-                className={styles.image}
-                alt={project.name}
-              ></img>
+              <div style={{ height: "calc(.47*min(600px, 90vw))" }}>
+                <img
+                  id={"image_" + project.name}
+                  onLoad={() => this.makeImageVisible(index)}
+                  src={project.image}
+                  alt={project.name}
+                />
+              </div>
             </a>
             <a href={project.url} target="blank">
               <div className={styles.name}>{project.name}</div>

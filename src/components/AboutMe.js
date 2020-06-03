@@ -17,12 +17,14 @@ export default class AboutMe extends React.Component {
   render() {
     return (
       <>
-        <img
-          id="AboutMe_headshot"
-          src={headshot}
-          onLoad={this.showHeadshot}
-          alt="headshot"
-        ></img>
+        <div style={{ height: 300 }}>
+          <img
+            id="AboutMe_headshot"
+            src={headshot}
+            onLoad={this.showHeadshot}
+            alt="headshot"
+          />
+        </div>
         <div className={styles.message}>
           <div>Hello!</div>
           <div>
