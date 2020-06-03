@@ -95,7 +95,7 @@ export default class Projects extends React.Component {
     for (const project of this.projectElements) {
       if (
         project.classList["1"] === styles.project_invisible &&
-        project.getBoundingClientRect().top < 0.8 * window.innerHeight
+        project.getBoundingClientRect().top < 0.85 * window.innerHeight
       ) {
         this.projectTimeouts.push(
           setTimeout(() => {

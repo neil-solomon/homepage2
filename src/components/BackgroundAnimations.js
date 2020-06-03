@@ -13,10 +13,6 @@ export default class BackgroundAnimations extends React.Component {
         <div className={styles.backgroundAnimation6}></div>
         <div className={styles.backgroundAnimation7}></div>
         <div className={styles.backgroundAnimation8}></div>
-        <div className={styles.backgroundAnimation9}></div>
-        <div className={styles.backgroundAnimation10}></div>
-        <div className={styles.backgroundAnimation11}></div>
-        <div className={styles.backgroundAnimation12}></div>
       </div>
     );
   }
