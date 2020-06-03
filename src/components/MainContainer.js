@@ -44,6 +44,7 @@ export default class MainContainer extends React.Component {
   };
 
   render() {
+    console.log(this.state.pageViews);
     return (
       <div style={{ overflow: "hidden" }}>
         <BackgroundAnimations />
@@ -51,6 +52,17 @@ export default class MainContainer extends React.Component {
           toggleMenu={this.toggleMenu}
           menuVisible={this.state.menuVisible}
         />
+        {window.innerWidth > 900 && (
+          <div
+            className={styles.pageTitle}
+            key={"pageTitle" + JSON.stringify(this.state.pageViews)}
+          >
+            {this.state.pageViews[0].inView && <>About Me</>}
+            {this.state.pageViews[1].inView && <>Projects</>}
+            {this.state.pageViews[2].inView && <>Resume</>}
+            {this.state.pageViews[3].inView && <>Connect</>}
+          </div>
+        )}
         <Menu
           visible={this.state.menuVisible}
           closeMenu={this.closeMenu}
@@ -59,7 +71,7 @@ export default class MainContainer extends React.Component {
         />
         <div
           className={styles.pageViewContainer}
-          key={JSON.stringify(this.state.pageViews)}
+          key={"pageViewContainer" + JSON.stringify(this.state.pageViews)}
           id="pageViewContainer"
         >
           {this.state.pageViews[0].inView && (

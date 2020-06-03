@@ -39,12 +39,12 @@ export default class MenuButton extends React.Component {
 
   buttonHoverIn = () => {
     if (this.props.menuVisible) {
-      this.line1.classList.add(styles.line_openHover);
-      this.line2.classList.add(styles.line_openHover);
-      this.line3.classList.add(styles.line_openHover);
       this.line1.classList.remove(styles.line_closeHover);
       this.line2.classList.remove(styles.line_closeHover);
       this.line3.classList.remove(styles.line_closeHover);
+      this.line1.classList.add(styles.line_openHover);
+      this.line2.classList.add(styles.line_openHover);
+      this.line3.classList.add(styles.line_openHover);
     } else {
       this.line1.classList.remove(styles.line_openHover);
       this.line2.classList.remove(styles.line_openHover);

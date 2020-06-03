@@ -2,8 +2,8 @@
   width: min(600px, 90vw);
   text-align: center;
   margin-left: calc((100vw - min(600px, 90vw)) / 2);
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin-top: 75px;
+  margin-bottom: 75px;
   transition: opacity 2s, padding-top 2s;
 }
 
@@ -41,4 +41,5 @@
   cursor: pointer;
   color: rgb(0, 150, 136);
   font-weight: bold;
+  margin-top: 5px;
 }
