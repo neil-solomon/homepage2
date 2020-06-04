@@ -17,16 +17,29 @@
   padding-top: 0px;
 }
 
+.image_container {
+  overflow: hidden;
+  height: calc(0.47 * min(600px, 90vw));
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.25);
+  transition: box-shadow 0.5s;
+}
+.image_container:hover {
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.25);
+}
+
 .image {
   cursor: pointer;
   border-radius: 20px;
   height: calc(0.47 * min(600px, 90vw));
-  /* width: min(600px, 90vw); */
-  box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.25);
-  transition: box-shadow 0.5s, opacity 1s;
+  margin-left: 0px;
+  margin-top: 0px;
+  transition: opacity 1s, height 1s, margin-left 1s, margin-top 1s;
 }
 .image:hover {
-  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.25);
+  height: calc(0.475 * min(600px, 90vw));
+  margin-left: -2px;
+  margin-top: -1px;
 }
 
 .image_invisible {

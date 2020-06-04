@@ -119,7 +119,7 @@ export default class Projects extends React.Component {
         {this.projects.map((project, index) => (
           <div key={"project_" + project.name} id={"project_" + project.name}>
             <a href={project.url} target="blank">
-              <div style={{ height: "calc(.47*min(600px, 90vw))" }}>
+              <div className={styles.image_container}>
                 <img
                   id={"image_" + project.name}
                   onLoad={() => this.makeImageVisible(index)}
