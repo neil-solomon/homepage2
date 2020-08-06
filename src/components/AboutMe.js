@@ -47,8 +47,8 @@ export default class AboutMe extends React.Component {
           <div>
             I am Neil Solomon, a student majoring in Computer Engineering and
             working in software development in New York City. Most of my
-            experience has been with web development using React, but I also
-            have programming experience with C++, C, Python, and Java. When I'm
+            experience has been with web development using React and Django, and
+            I also have programming experience with C++, C, and Java. When I'm
             not busy studying or working I love building beautiful, interactive
             web applications and enhancing my algorithmic problem-solving skiils
             on sites like LeetCode and HackRank. Please check out examples of
@@ -75,7 +75,7 @@ export default class AboutMe extends React.Component {
             </span>{" "}
             with me online.
           </div>
-          <div style={{ marginTop: 15 }}>Thank you for visiting!</div>
+          <div style={{ marginTop: 15 }}>Thanks for visiting!</div>
         </div>
       </div>
     );
