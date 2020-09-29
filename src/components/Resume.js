@@ -89,7 +89,7 @@ export default class Resume extends React.Component {
   downloadResume = () => {
     var link = document.createElement("a");
     link.setAttribute("href", resumePdf);
-    link.setAttribute("download", "NeilSolomon_resume_June2020");
+    link.setAttribute("download", "NeilSolomon_resume_Aug2020");
     link.style.visibility = "hidden";
     document.body.appendChild(link);
     link.click();
@@ -191,7 +191,7 @@ export default class Resume extends React.Component {
           <div>
             <strong>CodePath</strong>
           </div>
-          <div>Advanced Software Engineering: Summer 2021.</div>
+          <div>Advanced Software Engineering: Summer 2020.</div>
           <ul style={{ marginLeft: -25 }}>
             <li>
               Selected for a competitive 12-week course taught by software
