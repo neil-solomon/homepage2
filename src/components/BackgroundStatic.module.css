@@ -1,0 +1,169 @@
+.backgroundElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    opacity: .15;
+  }
+
+  .backgroundElement1 {
+    position: absolute;
+    top: 50px;
+    left: 65vw;
+    transform: rotate(60deg);
+    background-color: rgb(0, 0, 0, .25);
+    z-index: -1;
+    width: 40vw;
+    height: 40vw;
+    border: 1px solid rgb(0, 0, 0, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement1 {
+      width: 40vh;
+      height: 40vh;
+    }
+  }
+  
+  .backgroundElement2 {
+    position: absolute;
+    top: 50px;
+    left: 5vw;
+    transform: rotate(15deg);
+    background-color: rgb(25, 25, 25, .25);
+    z-index: -1;
+    width: 60vw;
+    height: 60vw;
+    border: 1px solid rgb(25, 25, 25, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement2 {
+      width: 60vh;
+      height: 60vh;
+    }
+  }
+  
+  .backgroundElement3 {
+    position: absolute;
+    top: 00px;
+    left: 25vw;
+    transform: rotate(35deg);
+    background-color: rgb(50, 50, 50, .25);
+    z-index: -1;
+    width: 75vw;
+    height: 75vw;
+    border: 1px solid rgb(50, 50, 50, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement3 {
+      width: 75vh;
+      height: 75vh;
+    }
+  }
+  
+  .backgroundElement4 {
+    position: absolute;
+    top: 400px;
+    left: 10vw;
+    transform: rotate(10deg);
+    background-color: rgb(75, 75, 75, .25);
+    z-index: -1;
+    width: 100vw;
+    height: 100vw;
+    border: 1px solid rgb(75, 75, 75, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement4 {
+      width: 100vh;
+      height: 100vh;
+    }
+  }
+  
+  .backgroundElement5 {
+    position: absolute;
+    top: 550px;
+    left: -5vw;
+    transform: rotate(25deg);
+    background-color: rgb(100, 100, 100, .25);
+    z-index: -1;
+    width: 50vw;
+    height: 50vw;
+    border: 1px solid rgb(100, 100, 100, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement5 {
+      width: 50vh;
+      height: 50vh;
+    }
+  }
+  
+  .backgroundElement6 {
+    position: absolute;
+    top: 20px;
+    left: -5vw;
+    transform: rotate(75deg);
+    background-color: rgb(50, 50, 50, .25);
+    z-index: -1;
+    width: 85vw;
+    height: 85vw;
+    border: 1px solid rgb(50, 50, 50, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement6 {
+      width: 85vh;
+      height: 85vh;
+    }
+  }
+  
+  .backgroundElement7 {
+    position: absolute;
+    top: 200px;
+    left: 30vw;
+    transform: rotate(25deg);
+    background-color: rgb(0, 0, 0, .25);
+    z-index: -1;
+    width: 90vw;
+    height: 90vw;
+    border: 1px solid rgb(0, 0, 0, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement7 {
+      width: 90vh;
+      height: 90vh;
+    }
+  }
+  
+  .backgroundElement8 {
+    position: absolute;
+    top: -100px;
+    left: 50vw;
+    transform: rotate(40deg);
+    background-color: rgb(25, 25, 25, .25);
+    z-index: -1;
+    width: 110vw;
+    height: 110vw;
+    border: 1px solid rgb(25, 25, 25, .5);
+    border-radius: 50px;
+  }
+  
+  @media (max-aspect-ratio: 13/9) {
+    .backgroundElement8 {
+      width: 110vh;
+      height: 110vh;
+    }
+  }  

@@ -37,7 +37,7 @@ export default class Connect extends React.Component {
   };
 
   hoverIn = (index) => {
-    console.log(index);
+    // console.log(index);
     switch (index) {
       case 0:
         this.emailIcon.classList.remove(styles.iconHoverOut);
@@ -57,7 +57,7 @@ export default class Connect extends React.Component {
   };
 
   hoverOut = (index) => {
-    console.log(index);
+    // console.log(index);
     switch (index) {
       case 0:
         this.emailIcon.classList.remove(styles.iconHoverIn);
