@@ -4,17 +4,17 @@
   margin-left: calc((100vw - min(600px, 90vw)) / 2);
   margin-top: 75px;
   margin-bottom: 75px;
-  transition: opacity 2s, padding-top 2s;
+  transition: opacity 2s, padding-top 2s, transform 2s;
 }
 
 .project_invisible {
   opacity: 0;
-  padding-top: 100px;
+  transform: translate(0px, 100px);
 }
 
 .project_visible {
   opacity: 1;
-  padding-top: 0px;
+  transform: translate(0px, 0px);
 }
 
 .image_container {

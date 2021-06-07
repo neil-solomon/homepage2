@@ -24,7 +24,7 @@
   position: absolute;
   color: rgb(96, 125, 139, 0.75);
   left: 80px;
-  top: 14px;
+  top: 20px;
   animation: pageTitleFadeIn 1s forwards;
 }
 

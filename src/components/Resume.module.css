@@ -20,17 +20,17 @@
   text-align: center;
   margin-left: calc((100vw - min(700px, 90vw)) / 2);
   margin-bottom: 50px;
-  transition: opacity 2s, padding-top 2s;
+  transition: opacity 2s, transform 2s;
 }
 
 .resumeBlock_invisible {
   opacity: 0;
-  padding-top: 100px;
+  transform: translate(0px, 100px);
 }
 
 .resumeBlock_visible {
   opacity: 1;
-  padding-top: 0px;
+  transform: translate(0px, 0px);
 }
 
 .divider {

@@ -33,7 +33,8 @@ export default class Projects extends React.Component {
         image: virtualBankImage,
         url: "https://neil-solomon.github.io/score_keeper/#/VirtualBank",
       },
-      // { API key cancelled due to inactivity
+      //  API key cancelled due to inactivity
+      // {
       //   name: "YouTube Playlist",
       //   description:
       //     "An attractive playlist for YouTube videos utilizing the YouTube Data API.",

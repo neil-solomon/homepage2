@@ -106,9 +106,14 @@ export default class Resume extends React.Component {
           </div>
           <br></br>
           <div>
+            <strong>Bloomberg LP</strong>
+          </div>
+          <div>Software Engineer: June 2021 - Present</div>
+          <br></br>
+          <div>
             <strong>GAL Manufacturing, LLC</strong>
           </div>
-          <div>R&amp;D Software Technician: August 2019 - Present</div>
+          <div>R&amp;D Software Technician: August 2019 - April 2021</div>
           <ul style={{ marginLeft: -50 }}>
             <li>
               Developed the new Galileo web app which displays real-time data
@@ -134,7 +139,7 @@ export default class Resume extends React.Component {
               and troubleshoot their Galileo web app installation.
             </li>
           </ul>
-          <br></br>
+          {/* <br></br>
           <div>
             <strong>GAL Manufacturing, LLC</strong>
           </div>
@@ -149,7 +154,7 @@ export default class Resume extends React.Component {
               Assisted in documentation of software team processes including
               GALaxy simulator set-up and testing, and software version control.
             </li>
-          </ul>
+          </ul> */}
           <div className={styles.divider}></div>
         </div>
         <div id="Resume_education" style={{ marginTop: 50 }}>

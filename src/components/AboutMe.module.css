@@ -12,15 +12,15 @@
   margin-left: calc((100vw - min(250px, 90vw)) / 2);
   box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.5);
   border: 5px solid rgb(0, 150, 136);
-  transition: opacity 2s, margin-top 2s;
+  transition: opacity 2s, transform 2s;
 }
 .headshotHide {
   opacity: 0;
-  margin-top: 100px;
+  transform: translate(0px, 100px);
 }
 .headshotShow {
   opacity: 1;
-  margin-top: 50px;
+  transform: translate(0px, 50px);
 }
 
 .link {

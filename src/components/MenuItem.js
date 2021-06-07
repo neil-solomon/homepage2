@@ -26,7 +26,7 @@ export default class MenuItem extends React.Component {
       this.enterTimeout = setTimeout(() => {
         this.menuItem.classList.remove(styles.menuItem_notVisible);
         this.menuItem.classList.add(styles.menuItem_visible);
-      }, 150 + 150 * this.props.index);
+      }, 250 + 100 * this.props.index);
     } else if (!this.props.menuVisible && prevProps.menuVisible) {
       this.menuItem.classList.remove(styles.menuItem_visible);
       this.menuItem.classList.add(styles.menuItem_notVisible);
