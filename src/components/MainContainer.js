@@ -8,6 +8,7 @@ import Resume from "./Resume";
 import Connect from "./Connect";
 import BackgroundAnimations from "./BackgroundAnimations";
 import BackgroundStatic from "./BackgroundStatic";
+import Background3d from "./Background3d";
 
 export default class MainContainer extends React.Component {
   state = {
@@ -48,7 +49,8 @@ export default class MainContainer extends React.Component {
     return (
       <div style={{ overflow: "hidden" }}>
         {/* <BackgroundAnimations /> */}
-        <BackgroundStatic />
+        {/* <BackgroundStatic /> */}
+        <Background3d />
         <MenuButton
           toggleMenu={this.toggleMenu}
           menuVisible={this.state.menuVisible}

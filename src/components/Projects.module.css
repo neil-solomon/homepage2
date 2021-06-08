@@ -34,12 +34,10 @@
   height: calc(0.47 * min(600px, 90vw));
   margin-left: 0px;
   margin-top: 0px;
-  transition: opacity 1s, height 1s, margin-left 1s, margin-top 1s;
+  transition: opacity 1s, transform 1s;
 }
 .image:hover {
-  height: calc(0.475 * min(600px, 90vw));
-  margin-left: -2px;
-  margin-top: -1px;
+  transform: scale(1.025);
 }
 
 .image_invisible {

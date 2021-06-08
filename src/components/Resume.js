@@ -139,7 +139,7 @@ export default class Resume extends React.Component {
               and troubleshoot their Galileo web app installation.
             </li>
           </ul>
-          {/* <br></br>
+          <br></br>
           <div>
             <strong>GAL Manufacturing, LLC</strong>
           </div>
@@ -154,7 +154,7 @@ export default class Resume extends React.Component {
               Assisted in documentation of software team processes including
               GALaxy simulator set-up and testing, and software version control.
             </li>
-          </ul> */}
+          </ul>
           <div className={styles.divider}></div>
         </div>
         <div id="Resume_education" style={{ marginTop: 50 }}>
