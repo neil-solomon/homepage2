@@ -45,14 +45,13 @@ export default class AboutMe extends React.Component {
         <div className={styles.message}>
           <div style={{ marginBottom: 15 }}>Hello!</div>
           <div>
-            I am Neil Solomon, a student majoring in Computer Engineering and
-            working in software development in New York City. Most of my
+            I am Neil Solomon, a software engineer at Bloomberg LP with a BE in
+            Computer Engineering from The City College of New York. Most of my
             experience has been with web development using React and Django, and
             I also have programming experience with C++, C, and Java. When I'm
-            not busy studying or working I love building beautiful, interactive
-            web applications and enhancing my algorithmic problem-solving skiils
-            on sites like LeetCode and HackRank. Please check out examples of
-            some of my{" "}
+            not busy working I love learning new things by building beautiful,
+            interactive web applications and solving complex algorithmic
+            problems. Please check out examples of some of my{" "}
             <span
               onClick={() => this.changePageView(1)}
               className={styles.link}

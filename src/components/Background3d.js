@@ -92,7 +92,7 @@ export default class Background3d extends React.Component {
     const animate = () => {
       requestAnimationFrame(animate);
       this.controls.autoRotateSpeed = this.state.mouseToCenterRatioX / 3;
-      this.pointLight2.power = (2 + this.state.mouseToCenterRatioY) * 15;
+      this.pointLight2.power = (1 + this.state.mouseToCenterRatioY) * 10;
       this.controls.update();
       this.renderer.render(this.scene, this.camera);
     };
