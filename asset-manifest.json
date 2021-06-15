@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/homepage2/static/css/main.07d0e519.chunk.css",
-    "main.js": "/homepage2/static/js/main.9f6ef43f.chunk.js",
-    "main.js.map": "/homepage2/static/js/main.9f6ef43f.chunk.js.map",
+    "main.css": "/homepage2/static/css/main.ccf21611.chunk.css",
+    "main.js": "/homepage2/static/js/main.71fdbd7a.chunk.js",
+    "main.js.map": "/homepage2/static/js/main.71fdbd7a.chunk.js.map",
     "runtime-main.js": "/homepage2/static/js/runtime-main.70f6c4e7.js",
     "runtime-main.js.map": "/homepage2/static/js/runtime-main.70f6c4e7.js.map",
     "static/js/2.6b0df45d.chunk.js": "/homepage2/static/js/2.6b0df45d.chunk.js",
     "static/js/2.6b0df45d.chunk.js.map": "/homepage2/static/js/2.6b0df45d.chunk.js.map",
     "index.html": "/homepage2/index.html",
-    "precache-manifest.0423fc64753a4ab864bbaaa9588c13e1.js": "/homepage2/precache-manifest.0423fc64753a4ab864bbaaa9588c13e1.js",
+    "precache-manifest.f8a4520d32c2856b22bf3c312ecec0b8.js": "/homepage2/precache-manifest.f8a4520d32c2856b22bf3c312ecec0b8.js",
     "service-worker.js": "/homepage2/service-worker.js",
-    "static/css/main.07d0e519.chunk.css.map": "/homepage2/static/css/main.07d0e519.chunk.css.map",
+    "static/css/main.ccf21611.chunk.css.map": "/homepage2/static/css/main.ccf21611.chunk.css.map",
     "static/js/2.6b0df45d.chunk.js.LICENSE.txt": "/homepage2/static/js/2.6b0df45d.chunk.js.LICENSE.txt",
     "static/media/NeilSolomon_resume_Aug2020.pdf": "/homepage2/static/media/NeilSolomon_resume_Aug2020.03e57e03.pdf",
     "static/media/riskDiceRoller.jpg": "/homepage2/static/media/riskDiceRoller.50ed39c3.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.70f6c4e7.js",
     "static/js/2.6b0df45d.chunk.js",
-    "static/css/main.07d0e519.chunk.css",
-    "static/js/main.9f6ef43f.chunk.js"
+    "static/css/main.ccf21611.chunk.css",
+    "static/js/main.71fdbd7a.chunk.js"
   ]
 }
