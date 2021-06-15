@@ -24,6 +24,7 @@ export default class Background3d extends React.Component {
     this.state = {
       mouseToCenterRatioX: 0.25,
       mouseToCenterRatioY: 0,
+      screenWidth: window.innerWidth,
     };
   }
 
@@ -37,10 +38,12 @@ export default class Background3d extends React.Component {
     this.setupAnimation();
 
     this.addHandleMouseMove();
+    this.addHandleResize();
   };
 
   componentWillUnmount = () => {
     this.removeHandleMouseMove();
+    this.removeHandleResize();
   };
 
   setupScene = () => {
@@ -84,7 +87,8 @@ export default class Background3d extends React.Component {
   setupOrbit = () => {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.autoRotate = true;
-    this.controls.autoRotateSpeed = this.state.mouseToCenterRatioX;
+    this.controls.autoRotateSpeed =
+      this.state.mouseToCenterRatioX * this.state.screenWidth;
     this.controls.enableDamping = true;
   };
 
@@ -107,7 +111,7 @@ export default class Background3d extends React.Component {
   };
 
   setupShapes = () => {
-    const numShapes = 1000;
+    const numShapes = 100;
     const maxPositionX = this.pageSize;
     const maxPositionY = this.pageSize;
     const maxPositionZ = this.pageSize;
@@ -187,7 +191,20 @@ export default class Background3d extends React.Component {
     this.setState({ mouseToCenterRatioX, mouseToCenterRatioY });
   };
 
+  addHandleResize = () => {
+    window.addEventListener("resize", this.handleResize);
+  };
+
+  removeHandleResize = () => {
+    window.removeEventListener("resize", this.handleResize);
+  };
+
+  handleResize = () => {
+    this.setState({ screenWidth: window.innerWidth });
+  };
+
   render() {
+    console.log(this.state.screenWidth);
     return <div id="Background3d" className={styles.container}></div>;
   }
 }
