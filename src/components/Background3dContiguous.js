@@ -112,6 +112,9 @@ export default class Background3dContiguous extends React.Component {
     const animate = () => {
       requestAnimationFrame(animate);
       this.rotateShapes();
+      this.camera.position.x += 0.01;
+      this.camera.position.y += 0.01;
+      console.log(this.camera.position);
       this.renderer.render(this.scene, this.camera);
     };
     animate();

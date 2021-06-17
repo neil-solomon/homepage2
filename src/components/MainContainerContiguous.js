@@ -21,6 +21,7 @@ export default class MainContainerContiguous extends React.Component {
             overflow: "auto",
           }}
         >
+          {/* <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
@@ -32,8 +33,7 @@ export default class MainContainerContiguous extends React.Component {
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
+          <div style={{ fontSize: 100 }}>content</div> */}
         </div>
       </>
     );
