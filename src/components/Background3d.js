@@ -97,6 +97,7 @@ export default class Background3d extends React.Component {
       requestAnimationFrame(animate);
       this.controls.autoRotateSpeed = this.state.mouseToCenterRatioX / 3;
       this.pointLight2.power = (1 + this.state.mouseToCenterRatioY) * 10;
+      console.log(this.camera.position);
       this.controls.update();
       this.renderer.render(this.scene, this.camera);
     };
@@ -204,7 +205,6 @@ export default class Background3d extends React.Component {
   };
 
   render() {
-    console.log(this.state.screenWidth);
     return <div id="Background3d" className={styles.container}></div>;
   }
 }
