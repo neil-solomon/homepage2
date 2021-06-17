@@ -50,7 +50,7 @@ export default class MainContainer extends React.Component {
       <div style={{ overflow: "hidden" }}>
         {/* <BackgroundAnimations /> */}
         {/* <BackgroundStatic /> */}
-        <Background3d />
+        <Background3d shape="sphere" shapeSize={0.1} />
         <MenuButton
           toggleMenu={this.toggleMenu}
           menuVisible={this.state.menuVisible}

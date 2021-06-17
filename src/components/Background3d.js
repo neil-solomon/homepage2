@@ -97,6 +97,10 @@ export default class Background3d extends React.Component {
       requestAnimationFrame(animate);
       this.controls.autoRotateSpeed = this.state.mouseToCenterRatioX / 3;
       this.pointLight2.power = (1 + this.state.mouseToCenterRatioY) * 10;
+      for (const shape of this.shapes) {
+        shape.rotation.x += 0.0025;
+        shape.rotation.y += 0.0025;
+      }
       this.controls.update();
       this.renderer.render(this.scene, this.camera);
     };
@@ -125,36 +129,57 @@ export default class Background3d extends React.Component {
       const positionZ = Math.random() * maxPositionZ * 2 - maxPositionZ;
       const rotationX = Math.random() * maxRotation * 2 - maxRotation;
       const rotationY = Math.random() * maxRotation * 2 - maxRotation;
-      const shape = this.makeSphere(positionX, positionY, positionZ);
-      // const shape = this.makeIcosahedron(
-      //   positionX,
-      //   positionY,
-      //   positionZ,
-      //   rotationX,
-      //   rotationY
-      // );
-      // const shape = this.makeTetrahedron(
-      //   positionX,
-      //   positionY,
-      //   positionZ,
-      //   rotationX,
-      //   rotationY
-      // );
+      const size = this.props.shapeSize || 0.1;
+      var shape;
+      switch (this.props.shape) {
+        case "sphere":
+          shape = this.makeSphere(positionX, positionY, positionZ, size);
+          break;
+        case "icosahedron":
+          shape = this.makeIcosahedron(
+            positionX,
+            positionY,
+            positionZ,
+            rotationX,
+            rotationY,
+            size
+          );
+          break;
+        case "tetrahedron":
+          shape = this.makeTetrahedron(
+            positionX,
+            positionY,
+            positionZ,
+            rotationX,
+            rotationY,
+            this.props.shapeSize
+          );
+          break;
+        default:
+          shape = this.makeSphere(positionX, positionY, positionZ, size);
+      }
       this.shapes[i] = shape;
       this.scene.add(this.shapes[i]);
     }
   };
 
-  makeSphere = (positionX, positionY, positionZ) => {
-    const geometry = new SphereGeometry(0.1, 32, 32);
+  makeSphere = (positionX, positionY, positionZ, size) => {
+    const geometry = new SphereGeometry(size, 32, 32);
     const material = new MeshStandardMaterial({ color: 0xcfd8dc });
     const sphere = new Mesh(geometry, material);
     sphere.position.set(positionX, positionY, positionZ);
     return sphere;
   };
 
-  makeIcosahedron = (positionX, positionY, positionZ, rotationX, rotationY) => {
-    const geometry = new IcosahedronGeometry(0.1);
+  makeIcosahedron = (
+    positionX,
+    positionY,
+    positionZ,
+    rotationX,
+    rotationY,
+    size
+  ) => {
+    const geometry = new IcosahedronGeometry(size);
     const material = new MeshStandardMaterial({ color: 0xcfd8dc });
     const icosahedron = new Mesh(geometry, material);
     icosahedron.position.set(positionX, positionY, positionZ);
@@ -163,8 +188,15 @@ export default class Background3d extends React.Component {
     return icosahedron;
   };
 
-  makeTetrahedron = (positionX, positionY, positionZ, rotationX, rotationY) => {
-    const geometry = new TetrahedronGeometry(0.1);
+  makeTetrahedron = (
+    positionX,
+    positionY,
+    positionZ,
+    rotationX,
+    rotationY,
+    size
+  ) => {
+    const geometry = new TetrahedronGeometry(size);
     const material = new MeshStandardMaterial({ color: 0xcfd8dc });
     const tetrahedron = new Mesh(geometry, material);
     tetrahedron.position.set(positionX, positionY, positionZ);
