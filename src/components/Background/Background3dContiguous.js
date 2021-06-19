@@ -10,6 +10,7 @@ import {
   PointLight,
   TetrahedronGeometry,
 } from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export default class Background3dContiguous extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ export default class Background3dContiguous extends React.Component {
     this.setupRenderer();
     this.setupLights();
     this.setupShapes();
+    this.setupOrbit();
     this.setupAnimation();
   };
 
@@ -38,7 +40,9 @@ export default class Background3dContiguous extends React.Component {
       0.1,
       1000
     );
-    this.camera.position.z = 10;
+    this.camera.position.x = 0;
+    this.camera.position.y = 0;
+    this.camera.position.z = 15;
   };
 
   setupRenderer = () => {
@@ -56,7 +60,7 @@ export default class Background3dContiguous extends React.Component {
     this.scene.add(this.innerLight);
 
     this.outerLight = new PointLight(0x009688, 1, 0, 1000);
-    this.outerLight.position.set(0, 0, 100);
+    this.outerLight.position.set(0, 0, 50);
     this.scene.add(this.outerLight);
   };
 
@@ -77,8 +81,8 @@ export default class Background3dContiguous extends React.Component {
       const rotationX = Math.random() * maxRotation * 2 - maxRotation;
       const rotationY = Math.random() * maxRotation * 2 - maxRotation;
       const shapeSize = this.props.shapeSize || 0.1;
-
-      this.shapes[i] = this.makeTetrahedron(
+      this.shapes[i] = {};
+      this.shapes[i].shapeObject = this.makeTetrahedron(
         positionX,
         positionY,
         positionZ,
@@ -86,8 +90,13 @@ export default class Background3dContiguous extends React.Component {
         rotationY,
         shapeSize
       );
+      this.shapes[i].originalPosition = {
+        x: positionX,
+        y: positionY,
+        z: positionZ,
+      };
 
-      this.scene.add(this.shapes[i]);
+      this.scene.add(this.shapes[i].shapeObject);
     }
   };
 
@@ -108,13 +117,19 @@ export default class Background3dContiguous extends React.Component {
     return tetrahedron;
   };
 
+  setupOrbit = () => {
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.autoRotate = true;
+    this.controls.autoRotateSpeed = 0.1;
+    this.controls.enableDamping = true;
+  };
+
   setupAnimation = () => {
     const animate = () => {
       requestAnimationFrame(animate);
       this.rotateShapes();
-      this.camera.position.x += 0.01;
-      this.camera.position.y += 0.01;
-      console.log(this.camera.position);
+      this.updateShapesPosition();
+      this.controls.update();
       this.renderer.render(this.scene, this.camera);
     };
     animate();
@@ -122,8 +137,38 @@ export default class Background3dContiguous extends React.Component {
 
   rotateShapes = () => {
     for (const shape of this.shapes) {
-      shape.rotation.x += 0.001;
-      shape.rotation.y += 0.001;
+      shape.shapeObject.rotation.x += 0.001;
+      shape.shapeObject.rotation.y += 0.001;
+    }
+  };
+
+  updateShapesPosition = () => {
+    const positionChange = this.props.scrollPosition / 1000;
+
+    for (const shape of this.shapes) {
+      if (shape.shapeObject.position.x > 0) {
+        shape.shapeObject.position.x =
+          shape.originalPosition.x + positionChange;
+      } else {
+        shape.shapeObject.position.x =
+          shape.originalPosition.x - positionChange;
+      }
+
+      if (shape.shapeObject.position.y > 0) {
+        shape.shapeObject.position.y =
+          shape.originalPosition.y + positionChange;
+      } else {
+        shape.shapeObject.position.y =
+          shape.originalPosition.y - positionChange;
+      }
+
+      if (shape.shapeObject.position.z > 0) {
+        shape.shapeObject.position.z =
+          shape.originalPosition.z + positionChange;
+      } else {
+        shape.shapeObject.position.z =
+          shape.originalPosition.z - positionChange;
+      }
     }
   };
 
