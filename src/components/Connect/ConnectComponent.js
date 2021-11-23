@@ -54,11 +54,6 @@ export default class ConnectComponent extends React.Component {
     const element = document.getElementById("ConnectComponent");
 
     if (!element) return;
-    console.log(
-      element.getBoundingClientRect().top,
-      element.getBoundingClientRect().bottom,
-      window.innerHeight
-    );
 
     if (
       element.getBoundingClientRect().bottom > 0 &&
@@ -98,7 +93,6 @@ export default class ConnectComponent extends React.Component {
   };
 
   hoverIn = (index) => {
-    // console.log(index);
     switch (index) {
       case 0:
         this.emailIcon.classList.remove(styles.iconHoverOut);
@@ -118,7 +112,6 @@ export default class ConnectComponent extends React.Component {
   };
 
   hoverOut = (index) => {
-    // console.log(index);
     switch (index) {
       case 0:
         this.emailIcon.classList.remove(styles.iconHoverIn);
@@ -174,30 +167,6 @@ export default class ConnectComponent extends React.Component {
           </a>
         </div>
       </div>
-      // <div id="ConnectComponent" className={styles.icons}>
-      //   {this.iconLinks.map((iconLink) => (
-      //     // <div key={iconLink.name}>
-      //     <a
-      //       href={iconLink.href}
-      //       target="blank"
-      //       rel="noopener"
-      //       key={iconLink.name}
-      //       id={iconLink.name}
-      //     >
-      //       {iconLink.imageComponent}
-      //     </a>
-      //     // </div>
-      //   ))}
-      //   {/* <a href="mailto:neilsolomon89@gmail.com">
-      //     <MailOutlined className={styles.icon} />
-      //   </a>
-      //   <a href="https://www.linkedin.com/in/neil-solomon/" target="blank">
-      //     <LinkedinOutlined />
-      //   </a>
-      //   <a href="https://github.com/neil-solomon" target="blank">
-      //     <GithubOutlined />
-      //   </a> */}
-      // </div>
     );
   }
 }
