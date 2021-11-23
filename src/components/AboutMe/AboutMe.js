@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AboutMe.module.css";
-import headshot from ".././media/wedding1crop2.jpg";
+import headshot from "../../media/wedding1crop2.jpg";
 
 export default class AboutMe extends React.Component {
   componentDidMount = () => {

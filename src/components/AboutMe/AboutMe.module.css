@@ -1,22 +1,24 @@
 .message {
-  width: min(800px, 90vw);
   text-align: center;
-  margin-left: calc((100vw - min(800px, 90vw)) / 2);
   margin-top: 20px;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255, 0.75);
+  padding: 20px 50px;
+  border-top: 1px solid rgb(96, 125, 139, 0.75);
+  border-bottom: 1px solid rgb(96, 125, 139, 0.75);
 }
 
 .headshot {
   width: min(250px, 90vw);
   border-radius: 100%;
-  margin-left: calc((100vw - min(250px, 90vw)) / 2);
+  margin-left: calc((99% - min(250px, 90vw)) / 2);
   box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.5);
   border: 5px solid rgb(0, 150, 136);
-  transition: opacity 2s, transform 2s;
+  transition: opacity 1s, transform 1s;
 }
 .headshotHide {
   opacity: 0;
-  transform: translate(0px, 100px);
+  transform: translate(0px, 75px);
 }
 .headshotShow {
   opacity: 1;

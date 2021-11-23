@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import MainContainer from "./components/MainContainer";
+import MainContainerContiguous from "./components/MainContainer/MainContainerContiguous";
 
 export default function App() {
-  return <MainContainer></MainContainer>;
+  return <MainContainerContiguous></MainContainerContiguous>;
 }

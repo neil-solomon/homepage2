@@ -1,0 +1,16 @@
+.container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
