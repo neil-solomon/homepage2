@@ -120,7 +120,7 @@ export default class Background3dContiguous extends React.Component {
   setupOrbit = () => {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.autoRotate = true;
-    this.controls.autoRotateSpeed = 0.1;
+    this.controls.autoRotateSpeed = 0.25;
     this.controls.enableDamping = true;
   };
 

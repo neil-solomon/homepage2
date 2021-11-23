@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./MainContainerContiguous.module.css";
 import Background3dContiguous from "../Background/Background3dContiguous";
 import AboutMeComponent from "../AboutMe/AboutMeComponent";
-import AboutMe from "../AboutMe/AboutMe";
+import ConnectComponent from "../Connect/ConnectComponent";
 
 export default class MainContainerContiguous extends React.Component {
   constructor(props) {
@@ -25,6 +25,8 @@ export default class MainContainerContiguous extends React.Component {
         />
         <div onScroll={this.handleScroll} className={styles.content}>
           <AboutMeComponent />
+          <ConnectComponent />
+          {/* <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
@@ -49,8 +51,7 @@ export default class MainContainerContiguous extends React.Component {
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
           <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
+          <div style={{ fontSize: 100 }}>content</div> */}
         </div>
       </>
     );
