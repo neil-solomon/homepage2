@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./MainContainer.module.css";
-import Menu from "./Menu";
-import MenuButton from "./MenuButton";
+import Menu from "../Menu/Menu";
+import MenuButton from "../MenuButton";
 import AboutMe from "./AboutMe";
-import Projects from "./Projects";
-import Resume from "./Resume";
+import Projects from "../Projects/Projects";
+import Resume from "../Resume";
 import Connect from "./Connect";
 import BackgroundAnimations from "./BackgroundAnimations";
 import BackgroundStatic from "./BackgroundStatic";
@@ -50,7 +50,7 @@ export default class MainContainer extends React.Component {
       <div style={{ overflow: "hidden" }}>
         {/* <BackgroundAnimations /> */}
         {/* <BackgroundStatic /> */}
-        <Background3d />
+        <Background3d shape="sphere" shapeSize={0.1} />
         <MenuButton
           toggleMenu={this.toggleMenu}
           menuVisible={this.state.menuVisible}
