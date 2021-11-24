@@ -5,6 +5,7 @@ import {
   LinkedinOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
+import { isInViewport } from "../utils";
 
 export default class ConnectComponent extends React.Component {
   constructor(props) {
@@ -23,11 +24,11 @@ export default class ConnectComponent extends React.Component {
 
   componentDidMount = () => {
     this.setupIcons();
-    this.updateIsInViewPort();
+    this.checkViewport();
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    this.updateIsInViewPort();
+    this.checkViewport();
   };
 
   componentWillUnmount = () => {
@@ -50,15 +51,8 @@ export default class ConnectComponent extends React.Component {
     this.githubIcon.classList.add(styles.iconHoverOut);
   };
 
-  updateIsInViewPort = () => {
-    const element = document.getElementById("ConnectComponent");
-
-    if (!element) return;
-
-    if (
-      element.getBoundingClientRect().bottom > 0 &&
-      element.getBoundingClientRect().top < window.innerHeight
-    ) {
+  checkViewport = () => {
+    if (isInViewport("ConnectComponent")) {
       this.iconsEntrance();
     } else {
       this.iconsExit();

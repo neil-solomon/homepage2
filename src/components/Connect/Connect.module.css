@@ -9,7 +9,7 @@
 .icons {
   position: relative;
   width: min(600px, 90vw);
-  height: 75px;
+  height: 150px;
   text-align: center;
   margin-left: calc((100vw - min(600px, 90vw)) / 2);
 }
@@ -21,7 +21,7 @@
   display: inline-block;
   font-size: 60px;
   color: rgb(69, 90, 100);
-  transition: color 0.5s;
+  transition: color 0.25s;
 }
 .icon:hover {
   color: rgb(0, 150, 136);
@@ -38,7 +38,7 @@
 @keyframes iconEntrance {
   from {
     opacity: 0;
-    transform: translate(0px, 100px);
+    transform: translate(0px, 75px);
   }
   to {
     opacity: 1;
