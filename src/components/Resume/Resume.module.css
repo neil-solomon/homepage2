@@ -10,7 +10,9 @@
   margin-bottom: 50px;
   font-size: 1.25em;
   color: rgb(96, 125, 139, 1);
-  transition: color 0.25s;
+  opacity: 0;
+  transform: translate(0px, 100px);
+  transition: opacity 2s, transform 2s, color 0.25s;
 }
 .download:hover {
   color: rgb(0, 150, 136);
@@ -21,6 +23,8 @@
   text-align: center;
   margin-left: calc((100vw - min(700px, 90vw)) / 2);
   margin-bottom: 50px;
+  opacity: 0;
+  transform: translate(0px, 100px);
   transition: opacity 2s, transform 2s;
 }
 

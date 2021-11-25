@@ -9,7 +9,7 @@
 .icons {
   position: relative;
   width: min(600px, 90vw);
-  height: 150px;
+  height: 125px;
   text-align: center;
   margin-left: calc((100vw - min(600px, 90vw)) / 2);
 }

@@ -10,11 +10,13 @@ export default class ResumeComponent extends React.Component {
 
     this.state = {};
 
+    this.download = null;
     this.education = null;
     this.expertise = null;
     this.experience = null;
     this.affiliations = null;
 
+    this.downloadTimeout = null;
     this.educationTimeout = null;
     this.expertiseTimeout = null;
     this.experienceTimeout = null;
@@ -31,6 +33,7 @@ export default class ResumeComponent extends React.Component {
   };
 
   componentWillUnmount = () => {
+    clearTimeout(this.downloadTimeout);
     clearTimeout(this.educationTimeout);
     clearTimeout(this.expertiseTimeout);
     clearTimeout(this.experienceTimeout);
@@ -38,118 +41,84 @@ export default class ResumeComponent extends React.Component {
   };
 
   setupSections = () => {
+    this.download = document.getElementById("Resume_download");
+    // this.download.classList.add(styles.download);
+    // this.download.classList.add(styles.resumeBlock_invisible);
+
     this.education = document.getElementById("Resume_education");
-    this.education.classList.add(styles.resumeBlock);
-    this.education.classList.add(styles.resumeBlock_invisible);
+    // this.education.classList.add(styles.resumeBlock);
+    // this.education.classList.add(styles.resumeBlock_invisible);
 
     this.expertise = document.getElementById("Resume_expertise");
-    this.expertise.classList.add(styles.resumeBlock);
-    this.expertise.classList.add(styles.resumeBlock_invisible);
+    // this.expertise.classList.add(styles.resumeBlock);
+    // this.expertise.classList.add(styles.resumeBlock_invisible);
 
     this.experience = document.getElementById("Resume_experience");
-    this.experience.classList.add(styles.resumeBlock);
-    this.experience.classList.add(styles.resumeBlock_invisible);
+    // this.experience.classList.add(styles.resumeBlock);
+    // this.experience.classList.add(styles.resumeBlock_invisible);
 
     this.affiliations = document.getElementById("Resume_affiliations");
-    this.affiliations.classList.add(styles.resumeBlock);
-    this.affiliations.classList.add(styles.resumeBlock_invisible);
+    // this.affiliations.classList.add(styles.resumeBlock);
+    // this.affiliations.classList.add(styles.resumeBlock_invisible);
   };
 
   checkViewport = () => {
     let delay = 0;
+    const increment = 500;
 
     if (
-      this.experience.classList["1"] === styles.resumeBlock_invisible &&
+      // this.download.classList["1"] === styles.resumeBlock_invisible &&
+      isInViewport("Resume_download")
+    ) {
+      this.downloadTimeout = setTimeout(() => {
+        // this.download.classList.remove(styles.resumeBlock_invisible);
+        this.download.classList.add(styles.resumeBlock_visible);
+      }, delay);
+      delay += increment;
+    }
+
+    if (
+      // this.experience.classList["1"] === styles.resumeBlock_invisible &&
       isInViewport("Resume_experience")
     ) {
       this.experienceTimeout = setTimeout(() => {
-        this.experience.classList.remove(styles.resumeBlock_invisible);
+        // this.experience.classList.remove(styles.resumeBlock_invisible);
         this.experience.classList.add(styles.resumeBlock_visible);
       }, delay);
-      delay += 1000;
+      delay += increment;
     }
 
     if (
-      this.education.classList["1"] === styles.resumeBlock_invisible &&
+      // this.education.classList["1"] === styles.resumeBlock_invisible &&
       isInViewport("Resume_education")
     ) {
-      console.log("education in view");
-
       this.educationTimeout = setTimeout(() => {
-        this.education.classList.remove(styles.resumeBlock_invisible);
+        // this.education.classList.remove(styles.resumeBlock_invisible);
         this.education.classList.add(styles.resumeBlock_visible);
       }, delay);
-      delay += 1000;
+      delay += increment;
     }
 
     if (
-      this.expertise.classList["1"] === styles.resumeBlock_invisible &&
+      // this.expertise.classList["1"] === styles.resumeBlock_invisible &&
       isInViewport("Resume_expertise")
     ) {
       this.expertiseTimeout = setTimeout(() => {
-        this.expertise.classList.remove(styles.resumeBlock_invisible);
+        // this.expertise.classList.remove(styles.resumeBlock_invisible);
         this.expertise.classList.add(styles.resumeBlock_visible);
       }, delay);
-      delay += 1000;
+      delay += increment;
     }
 
     if (
-      this.affiliations.classList["1"] === styles.resumeBlock_invisible &&
+      // this.affiliations.classList["1"] === styles.resumeBlock_invisible &&
       isInViewport("Resume_affiliations")
     ) {
       this.affiliationsTimeout = setTimeout(() => {
-        this.affiliations.classList.remove(styles.resumeBlock_invisible);
+        // this.affiliations.classList.remove(styles.resumeBlock_invisible);
         this.affiliations.classList.add(styles.resumeBlock_visible);
       }, delay);
-      delay += 1000;
-    }
-  };
-
-  updateElementsInView = () => {
-    var delay = 0;
-
-    if (
-      this.experience.classList["1"] === styles.resumeBlock_invisible &&
-      this.experience.getBoundingClientRect().top < 0.8 * window.innerHeight
-    ) {
-      this.experienceTimeout = setTimeout(() => {
-        this.experience.classList.remove(styles.resumeBlock_invisible);
-        this.experience.classList.add(styles.resumeBlock_visible);
-      }, delay);
-      delay += 1000;
-    }
-
-    if (
-      this.education.classList["1"] === styles.resumeBlock_invisible &&
-      this.education.getBoundingClientRect().top < 0.8 * window.innerHeight
-    ) {
-      this.educationTimeout = setTimeout(() => {
-        this.education.classList.remove(styles.resumeBlock_invisible);
-        this.education.classList.add(styles.resumeBlock_visible);
-      }, delay);
-      delay += 1000;
-    }
-
-    if (
-      this.expertise.classList["1"] === styles.resumeBlock_invisible &&
-      this.expertise.getBoundingClientRect().top < 0.8 * window.innerHeight
-    ) {
-      this.expertiseTimeout = setTimeout(() => {
-        this.expertise.classList.remove(styles.resumeBlock_invisible);
-        this.expertise.classList.add(styles.resumeBlock_visible);
-      }, delay);
-      delay += 1000;
-    }
-
-    if (
-      this.affiliations.classList["1"] === styles.resumeBlock_invisible &&
-      this.affiliations.getBoundingClientRect().top < 0.8 * window.innerHeight
-    ) {
-      this.affiliationsTimeout = setTimeout(() => {
-        this.affiliations.classList.remove(styles.resumeBlock_invisible);
-        this.affiliations.classList.add(styles.resumeBlock_visible);
-      }, delay);
-      delay += 1000;
+      delay += increment;
     }
   };
 
@@ -166,11 +135,15 @@ export default class ResumeComponent extends React.Component {
   render() {
     return (
       <>
-        <div className={styles.download} onClick={this.downloadResume}>
-          Download Resume (PDF) <DownloadOutlined />
+        <div
+          onClick={this.downloadResume}
+          id="Resume_download"
+          className={styles.download}
+        >
+          Download PDF <DownloadOutlined />
         </div>
-        <div id="Resume_experience">
-          <div className={styles.divider} style={{ marginTop: 50 }}></div>
+        <div id="Resume_experience" className={styles.resumeBlock}>
+          {/* <div className={styles.divider} style={{ marginTop: 50 }}></div> */}
           <div className={styles.heading} style={{ marginTop: 50 }}>
             EXPERIENCE
           </div>
@@ -225,9 +198,13 @@ export default class ResumeComponent extends React.Component {
               GALaxy simulator set-up and testing, and software version control.
             </li>
           </ul>
-          <div className={styles.divider}></div>
+          {/* <div className={styles.divider}></div> */}
         </div>
-        <div id="Resume_education" style={{ marginTop: 50 }}>
+        <div
+          id="Resume_education"
+          style={{ marginTop: 50 }}
+          className={styles.resumeBlock}
+        >
           <div className={styles.heading}>EDUCATION</div>
           <br></br>
           <div>
@@ -275,9 +252,9 @@ export default class ResumeComponent extends React.Component {
               questions.
             </li>
           </ul>
-          <div className={styles.divider}></div>
+          {/* <div className={styles.divider}></div> */}
         </div>
-        <div id="Resume_expertise">
+        <div id="Resume_expertise" className={styles.resumeBlock}>
           <div className={styles.heading}>EXPERTISE</div>
           <br></br>
           <div>
@@ -292,16 +269,20 @@ export default class ResumeComponent extends React.Component {
             <strong>Technical Skills</strong>
           </div>
           <div>React, Django, PyQt, and Git.</div>
-          <div className={styles.divider}></div>
+          {/* <div className={styles.divider}></div> */}
         </div>
-        <div id="Resume_affiliations" style={{ marginBottom: 100 }}>
+        <div
+          id="Resume_affiliations"
+          style={{ marginBottom: 100 }}
+          className={styles.resumeBlock}
+        >
           <div className={styles.heading}>AFFILIATIONS</div>
           <br></br>
           <div>
             <strong>National Society of Black Engineers</strong>
           </div>
           <div>Member, 2017 - Present</div>
-          <div className={styles.divider}></div>
+          {/* <div className={styles.divider}></div> */}
         </div>
       </>
     );

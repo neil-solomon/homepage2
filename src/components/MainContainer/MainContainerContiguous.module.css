@@ -6,3 +6,23 @@
   width: 100vw;
   overflow: auto;
 }
+
+.divider {
+  text-align: center;
+  font-size: 1.25em;
+  color: rgb(0, 150, 136);
+}
+
+.dividerLine {
+  margin-left: calc((100vw - min(700px, 90vw)) / 2);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 2px;
+  width: min(700px, 90vw);
+  background-image: linear-gradient(
+    to right,
+    rgb(96, 125, 139, 0),
+    rgb(96, 125, 139, 1),
+    rgb(96, 125, 139, 0)
+  );
+}

@@ -4,6 +4,7 @@ import ticTacGrowImage from "../../media/ticTacGrow.jpg";
 import virtualBankImage from "../../media/virtualBank.jpg";
 import riskDiceRollerImage from "../../media/riskDiceRoller.jpg";
 import scoreboardImage from "../../media/scoreboard.jpg";
+import { isInViewport } from "../utils";
 
 export default class ProjectsComponent extends React.Component {
   constructor(props) {
@@ -43,65 +44,67 @@ export default class ProjectsComponent extends React.Component {
   }
 
   componentDidMount = () => {
+    this.setupElements();
+    this.updateElementsInView();
+  };
+
+  componentWillUnmount = () => {
+    for (const projectTimeout in this.projectTimeouts) {
+      clearTimeout(projectTimeout);
+    }
+  };
+
+  componentDidUpdate = () => {
+    this.updateElementsInView();
+  };
+
+  setupElements = () => {
     this.projectElements = [];
     this.projectImageElements = [];
     for (const project of this.projects) {
       this.projectElements.push(
         document.getElementById("project_" + project.name)
       );
-      this.projectElements[this.projectElements.length - 1].classList.add(
-        styles.project
-      );
-      this.projectElements[this.projectElements.length - 1].classList.add(
-        styles.project_invisible
-      );
+      // this.projectElements[this.projectElements.length - 1].classList.add(
+      //   styles.project
+      // );
+      // this.projectElements[this.projectElements.length - 1].classList.add(
+      //   styles.project_invisible
+      // );
       this.projectImageElements.push(
         document.getElementById("image_" + project.name)
       );
-      this.projectImageElements[
-        this.projectImageElements.length - 1
-      ].classList.add(styles.image);
-      this.projectImageElements[
-        this.projectImageElements.length - 1
-      ].classList.add(styles.image_invisible);
-    }
-
-    document
-      .getElementById("pageViewContainer")
-      .addEventListener("scroll", () => this.updateElementsInView());
-
-    this.updateElementsInView();
-  };
-
-  componentWillUnmount = () => {
-    document
-      .getElementById("pageViewContainer")
-      .removeEventListener("scroll", () => this.updateElementsInView());
-    for (const projectTimeout in this.projectTimeouts) {
-      clearTimeout(projectTimeout);
+      // this.projectImageElements[
+      //   this.projectImageElements.length - 1
+      // ].classList.add(styles.image);
+      // this.projectImageElements[
+      //   this.projectImageElements.length - 1
+      // ].classList.add(styles.image_invisible);
     }
   };
 
   updateElementsInView = () => {
-    var delay = 0;
+    let delay = 0;
+    const increment = 500;
+
     for (const project of this.projectElements) {
       if (
-        project.classList["1"] === styles.project_invisible &&
-        project.getBoundingClientRect().top < 0.85 * window.innerHeight
+        // project.classList["1"] === styles.project_invisible &&
+        isInViewport(project.id)
       ) {
         this.projectTimeouts.push(
           setTimeout(() => {
-            project.classList.remove(styles.project_invisible);
+            // project.classList.remove(styles.project_invisible);
             project.classList.add(styles.project_visible);
           }, delay)
         );
-        delay += 1000;
+        delay += increment;
       }
     }
   };
 
   makeImageVisible = (index) => {
-    this.projectImageElements[index].classList.remove(styles.image_invisible);
+    // this.projectImageElements[index].classList.remove(styles.image_invisible);
     this.projectImageElements[index].classList.add(styles.image_visible);
   };
 
@@ -109,7 +112,11 @@ export default class ProjectsComponent extends React.Component {
     return (
       <>
         {this.projects.map((project, index) => (
-          <div key={"project_" + project.name} id={"project_" + project.name}>
+          <div
+            key={"project_" + project.name}
+            id={"project_" + project.name}
+            className={styles.project}
+          >
             <a href={project.url} target="blank">
               <div className={styles.image_container}>
                 <img
@@ -117,6 +124,7 @@ export default class ProjectsComponent extends React.Component {
                   onLoad={() => this.makeImageVisible(index)}
                   src={project.image}
                   alt={project.name}
+                  className={styles.image}
                 />
               </div>
             </a>

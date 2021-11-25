@@ -55,7 +55,7 @@ export default class ConnectComponent extends React.Component {
     if (isInViewport("ConnectComponent")) {
       this.iconsEntrance();
     } else {
-      this.iconsExit();
+      // this.iconsExit();
     }
   };
 

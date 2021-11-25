@@ -4,6 +4,8 @@
   margin-left: calc((100vw - min(600px, 90vw)) / 2);
   margin-top: 75px;
   margin-bottom: 75px;
+  opacity: 0;
+  transform: translate(0px, 100px);
   transition: opacity 2s, padding-top 2s, transform 2s;
 }
 
@@ -34,7 +36,7 @@
   height: calc(0.47 * min(600px, 90vw));
   margin-left: 0px;
   margin-top: 0px;
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 0.5s;
 }
 .image:hover {
   transform: scale(1.025);

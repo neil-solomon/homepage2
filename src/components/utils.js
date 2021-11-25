@@ -7,8 +7,10 @@ export function isInViewport(id) {
     element.getBoundingClientRect().bottom > 0 &&
     element.getBoundingClientRect().top < window.innerHeight
   ) {
+    // console.log(`${id} in view`);
     return true;
   } else {
+    // console.log(`${id} NOT in view`);
     return false;
   }
 }

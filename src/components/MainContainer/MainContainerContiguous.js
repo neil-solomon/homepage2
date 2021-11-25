@@ -18,6 +18,16 @@ export default class MainContainerContiguous extends React.Component {
     this.setState({ scrollPosition: event.target.scrollTop });
   };
 
+  divider = (name) => {
+    return (
+      <div className={styles.divider}>
+        <div className={styles.dividerLine}></div>
+        {name}
+        <div className={styles.dividerLine}></div>
+      </div>
+    );
+  };
+
   render() {
     return (
       <>
@@ -28,7 +38,9 @@ export default class MainContainerContiguous extends React.Component {
         <div onScroll={this.handleScroll} className={styles.content}>
           <AboutMeComponent />
           <ConnectComponent />
+          {this.divider("Projects")}
           <ProjectsComponent />
+          {this.divider("Resume")}
           <ResumeComponent />
         </div>
       </>
