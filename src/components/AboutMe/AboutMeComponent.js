@@ -13,7 +13,7 @@ export default class AboutMeComponent extends React.Component {
 
   render() {
     return (
-      <>
+      <div className={styles.fadeIn}>
         <div style={{ height: 300 }}>
           <img
             src={headshot}
@@ -44,7 +44,7 @@ export default class AboutMeComponent extends React.Component {
             check out the source code for all of my projects on Github.
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

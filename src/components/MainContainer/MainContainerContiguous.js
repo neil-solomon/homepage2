@@ -3,6 +3,8 @@ import styles from "./MainContainerContiguous.module.css";
 import Background3dContiguous from "../Background/Background3dContiguous";
 import AboutMeComponent from "../AboutMe/AboutMeComponent";
 import ConnectComponent from "../Connect/ConnectComponent";
+import ResumeComponent from "../Resume/ResumeComponent";
+import ProjectsComponent from "../Projects/ProjectsComponent";
 
 export default class MainContainerContiguous extends React.Component {
   constructor(props) {
@@ -16,6 +18,16 @@ export default class MainContainerContiguous extends React.Component {
     this.setState({ scrollPosition: event.target.scrollTop });
   };
 
+  divider = (name) => {
+    return (
+      <div className={styles.divider}>
+        <div className={styles.dividerLine}></div>
+        {name}
+        <div className={styles.dividerLine}></div>
+      </div>
+    );
+  };
+
   render() {
     return (
       <>
@@ -26,32 +38,10 @@ export default class MainContainerContiguous extends React.Component {
         <div onScroll={this.handleScroll} className={styles.content}>
           <AboutMeComponent />
           <ConnectComponent />
-          {/* <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div>
-          <div style={{ fontSize: 100 }}>content</div> */}
+          {this.divider("Projects")}
+          <ProjectsComponent />
+          {this.divider("Resume")}
+          <ResumeComponent />
         </div>
       </>
     );
